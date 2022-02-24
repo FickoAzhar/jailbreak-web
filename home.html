@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="asset/css/style.css">
    
 
-    <title>Hello, world!</title>
+    <title>The Dream's Property</title>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
@@ -38,14 +38,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Blog</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Find Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                    <li class="nav-item dropdown">
+                        <!-- <a class="nav-link" href="#">Find Us</a> -->
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Find Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact Us</a></li>
+                        </ul>
                     </li> 
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -72,6 +72,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-7 mx-auto text-center">
+                    <img src="asset/img/logo-image.png" width="200">
                     <h1 class="text-white">The Dream's Property</h1>
                     <p class="text-white my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quia
                         sequi eius. Quas, totam aliquid. Repudiandae reiciendis vel excepturi ipsa voluptate dicta!</p>
@@ -92,18 +93,18 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">TENTANG KAMI</h6>
+                    <h6 class="text-color">TENTANG KAMI</h6>
                     <h1>Profile The Dream's property</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-7">
+                <div class="col-lg-7 my-auto py-2 text-end">
                     <p class="text-align-justify">The Dream's Property merupakan projek kolaborasi berskala internasional antara PT Meikarta Group Pte. Ltd., dan PT. Cipta Anugerah. Tiga company besar membangun international standard golden resort living di lokasi paling strategis di Kemang, dengan konsep “Golden Living by The Mountain”. The Dream's Property adalah development properti paling eksklusif dan terbaik di Indonesia.
                     </p>
-                    <button type="button" class="mt-2 py-2 btn btn-primary">Read More</button>
+                    <button type="button" class="mt-2 btn btn-primary">Read More</button>
                 </div>
                 <div class="col-lg-5">
-                    <img src="asset/img/about.jpg" alt="" class="rounded" height="250">
+                    <img src="asset/img/about.jpg" alt="" class="rounded" width="100%">
                 </div>
             </div>
         </div>
@@ -159,7 +160,7 @@
         <div class="container-fluid">
             <div class="row mb-5">
                 <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">KATALOG</h6>
+                    <h6 class="text-color">KATALOG</h6>
                     <h1>Produk yang kami tawarkan</h1>
                     <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
                         in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
@@ -279,7 +280,7 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-primary">BLOG</h6>
+                    <h6 class="text-color">BLOG</h6>
                     <h1>Latest News From The Blog</h1>
                     <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
                 </div>
