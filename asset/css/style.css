@@ -24,10 +24,9 @@ a {
     text-decoration: none;
 }
 
-img {
+#container img{
     width: 100%;
 }
-
 
 /*NAVBAR*/
 /* .navbar{
@@ -89,6 +88,13 @@ section {
     padding-bottom: 120px;
 }
 /*END SECTION ALL*/
+
+
+/*TEXT COLOR*/
+.text-color{
+    color: var(--primary);
+}
+/*END TEXT COLOR*/
 
 
 /*ADVANTAGES*/
@@ -157,6 +163,38 @@ section {
     transform: translateY(5px);
 }
 /*END BLOG*/
+
+
+/*FEATURES*/
+#container-bg{
+    background-color: #ECECEC;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#container-bg h2{
+    color: var(--primary);
+}
+#container-bg p{
+    color: var(--dark);
+}
+/*END FEATURES*/
+
+
+/*PRODUCT*/
+.product .caption{
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0 50px 50px 0;
+}
+.product .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+.btn:hover{
+    background: var(--primary);
+    border-color: var(--primary);
+}
+/*END PRODUCT*/
 
 
 /*FOOTER*/
