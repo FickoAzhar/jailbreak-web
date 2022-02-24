@@ -30,9 +30,9 @@ img {
 
 
 /*NAVBAR*/
-.navbar{
+/* .navbar{
     background-color: var(--primary);
-}
+} */
 
 .navbar .btn{
     /* border: 2px solid var(--primary); */
@@ -47,6 +47,10 @@ img {
 }
 
 .navbar .dropdown-menu{
+    background-color: var(--primary);
+}
+
+.bgnav{
     background-color: var(--primary);
 }
 /*END NAVBAR*/
