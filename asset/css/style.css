@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
+
+:root {
+    --primary: #C28222;
+    --dark: #21252f;
+    --body: #888;
+    --box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: "Sora", sans-serif;
+    line-height: 1.7;
+    color: var(--body);
+}
+
+h1,h2,h3,h4,h5,h6,
+.display-4 {
+    color: var(--dark);
+    font-weight: 700;
+}
+
+a {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+
+/*NAVBAR*/
+.navbar{
+    background-color: var(--primary);
+}
+
+.navbar .btn{
+    /* border: 2px solid var(--primary); */
+    width: 90px;
+    color: white;
+    border: 1px solid black;
+}
+.navbar .btn:hover{
+    background: white;
+    border: 1px solid white;
+    color: black;
+}
+
+.navbar .dropdown-menu{
+    background-color: var(--primary);
+}
+/*END NAVBAR*/
+
+
+/*HERO*/
+.hero .btn:hover{
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+.hero {
+    background-image: url(../img/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 2;
+}
+
+.hero::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+/* END HERO*/
+
+
+/*SECTION ALL*/
+section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+/*END SECTION ALL*/
+
+
+/*ADVANTAGES*/
+.advantages .col-img {
+    background-image: url(../img/advantages.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.advantages .iconbox {
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: white;
+    font-size: 32px;
+    border-radius: 100px;
+    flex: none;
+}
+/*END ADVANTAGES*/
+
+
+/*CATALOG*/
+.catalog .caption{
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0 50px 50px 0;
+}
+.catalog .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.4s ease;
+    opacity: 0;
+}
+
+.catalog img {
+    transition: all 0.4s ease;   
+}
+
+.catalog:hover .overlay{
+    opacity: 1;
+}
+
+.catalog:hover img {
+    transform: scale(1.1);
+}
+/*END CATALOG*/
+
+
+/*BLOG*/
+.card-effect {
+    transition: all 0.35s ease;
+}
+.card-effect h5{
+    font-size: 16px;
+}
+.card-effect p{
+    font-size: 14px;
+    text-align: justify;
+}
+.card-effect img{
+    border-radius: 10px;
+}
+.card-effect:hover {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+/*END BLOG*/
+
+
+/*FOOTER*/
+footer .social-icons a {
+    width: 34px;
+    height: 34px;
+    background-color: transparent;
+    color: var(--body);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-right: 5px;
+    transition: all 0.4s ease;
+    border: 2px solid var(--body);
+}
+
+footer .social-icons a:hover {
+    color: white;
+    background-color: var(--primary);
+    border-color: white;
+}
+
+.footer-top p{
+    text-align: justify;
+    width: 90%;
+}
+.footer-top a {
+    color: var(--body);
+}
+
+.footer-top a:hover {
+    color: white;
+}
+
+.footer-top .contact i{
+    margin-right: 5px;
+}
+.footer-bottom {
+    background-color: #242933;
+}
+/*END FOOTER*/
