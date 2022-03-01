@@ -61,7 +61,7 @@ a {
     border: 1px solid var(--primary);
 }
 .hero {
-    background-image: url(../img/hero.jpg);
+    background-image: url(../asset/img/hero.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -99,7 +99,7 @@ section {
 
 /*ADVANTAGES*/
 .advantages .col-img {
-    background-image: url(../img/advantages.jpeg);
+    background-image: url(../asset/img/advantages.jpeg);
     background-position: center;
     background-size: cover;
 }

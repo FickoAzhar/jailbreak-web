@@ -14,11 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home',[
+        "title" => "The Dream's Property",
+        "active" => "home"
+    ]);
 });
+
 Route::get('/product', function () {
-    return view('product');
+    return view('product',[
+        "title" => "produk",
+        "active" => "produk"
+    ]);
 });
-Route::get('/detailProduct', function () {
-    return view('detailProduct');
+
+Route::get('/blog', function () {
+    return view('blog',[
+        "title" => "blog",
+        "active" => "blog"
+    ]);
 });
