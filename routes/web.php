@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,5 @@ Route::get('/product', function () {
     ]);
 });
 
-Route::get('/blog', function () {
-    return view('blog',[
-        "title" => "blog",
-        "active" => "blog"
-    ]);
-});
+Route::get('/blogs',[BlogController::class, 'index']);
+Route::get('/blogs/{blog:slug}',[BlogController::class, 'show']);
