@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardBlogController;
@@ -24,18 +25,8 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/product', function () {
-    return view('product',[
-        "title" => "produk",
-        "active" => "produk"
-    ]);
-});
-Route::get('/detailProduct', function () {
-    return view('detailProduct',[
-        "title" => "produk",
-        "active" => "produk"
-    ]);
-});
+Route::get('/products',[ProductController::class, 'index']);
+Route::get('/products/{product:slug}',[ProductController::class, 'show']);
 
 Route::get('/blogs',[BlogController::class, 'index']);
 Route::get('/blogs/{blog:slug}',[BlogController::class, 'show']);
