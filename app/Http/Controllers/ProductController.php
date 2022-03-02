@@ -22,6 +22,7 @@ class ProductController extends Controller
         return view('product',[
             "title" => "Single Product",
             "active" => 'products',
+            "products" => Product::latest()->paginate(9)->withQueryString(),
             "product" => $product
         ]);
     }
