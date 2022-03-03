@@ -17,6 +17,7 @@ class DashboardBlogController extends Controller
      */
     public function index()
     {
+        // $this->authorize('admin');
         return view('dashboard.blogs.index',[
             "blogs" => Blog::all()
             // 'blogs' => Blog::where('user_id',auth()->user()->id)->get()

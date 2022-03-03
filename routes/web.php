@@ -38,7 +38,7 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', function(){
     return view('dashboard.index');
-})->middleware('auth');
+})->middleware('admin');
 
-Route::get('/dashboard/blogs/checkSlug', [DashboardBlogController::class, 'checkSlug'])->middleware('auth');
-Route::resource('/dashboard/blogs',DashboardBlogController::class)->middleware('auth');
+Route::get('/dashboard/blogs/checkSlug', [DashboardBlogController::class, 'checkSlug'])->middleware('admin');
+Route::resource('/dashboard/blogs',DashboardBlogController::class)->middleware('admin');

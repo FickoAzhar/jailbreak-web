@@ -13,7 +13,7 @@ class BlogController extends Controller
         return view('blogs',[
             "title" => "All Blogs" . $title,
             "active" => 'blogs',
-            // "posts" => Post::all()
+            // "blogs" => Blog::all()
             "blogs" => Blog::latest()->filter(request(['search']))->paginate(9)->withQueryString()
         ]);
     }
@@ -22,6 +22,7 @@ class BlogController extends Controller
         return view('blog',[
             "title" => "Single Blog",
             "active" => 'blogs',
+            "blogs" => Blog::latest()->paginate(4)->withQueryString(),
             "blog" => $blog
         ]);
     }
