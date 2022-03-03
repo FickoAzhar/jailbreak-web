@@ -7,7 +7,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center">
-                        <h2 class="fw-bold mb-5">Contact Us</h2>
+                        <h6 class="text-color">Contact Us</h6>
+                        <h2 class="fw-bold mb-5">Hi! Let's Connect</h2>
                     </div>
                 </div>
             </div>
