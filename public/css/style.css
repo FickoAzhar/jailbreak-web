@@ -197,6 +197,13 @@ section {
 /*END PRODUCT*/
 
 
+/*ABOUT*/
+.nav-link:hover {
+    color: #242933;
+}
+/*END ABOUT*/
+
+
 /*FOOTER*/
 footer .social-icons a {
     width: 34px;
