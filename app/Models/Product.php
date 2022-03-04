@@ -16,8 +16,8 @@ class Product extends Model
     {
         $query->when($filters['search'] ?? false, function($query, $search) {
             return $query->where(function($query) use ($search) {
-                 $query->where('title', 'like', '%' . $search . '%')
-                             ->orWhere('category', 'like', '%' . $search . '%');
+                 $query->where('title', 'like', '%' . $search . '%');
+                            //  ->orWhere('category', 'like', '%' . $search . '%');
             });
          });
     }

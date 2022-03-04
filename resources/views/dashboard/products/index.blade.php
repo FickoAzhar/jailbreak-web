@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-0 mb-3 border-2 border-bottom">
-        <h1 class="h2">The Dream's Property Blog</h1>
+        <h1 class="h2">The Dream's Property product</h1>
     </div>
 
     @if(session()->has('success'))
@@ -13,28 +13,28 @@
 
 
     <div class="table-responsive mt-4">
-      <div class="d-flex justify-content-end me-3">
-        <a href="/dashboard/blogs/create" class="btn btn-primary mb-3"><span data-feather="plus"></span>  Blog Baru</a>
-      </div>
+        <div class="d-flex justify-content-end me-3">
+          <a href="/dashboard/products/create" class="btn btn-primary mb-3"><span data-feather="plus"></span>  product Baru</a>
+        </div>
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">#</th>
+              <th scope="col">No</th>
               <th scope="col">Title</th>
-              <th scope="col">Created at</th>
+              <th scope="col">Category</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
-            @foreach ($blogs as $blog)
+            @foreach ($products as $product)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
-                    <td>{{ $blog->title }}</td>
-                    <td>{{ $blog->created_at }}</td>
+                    <td>{{ $product->title }}</td>
+                    <td>{{ $product->category->name }}</td>
                     <td>
-                        <a href="/dashboard/blogs/{{ $blog->slug }}" class="badge bg-info"><span data-feather="eye"></span></a>
-                        <a href="/dashboard/blogs/{{ $blog->slug }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
-                        <form action="/dashboard/blogs/{{ $blog->slug }}" method="post" class="d-inline">
+                        <a href="/dashboard/products/{{ $product->slug }}" class="badge bg-info"><span data-feather="eye"></span></a>
+                        <a href="/dashboard/products/{{ $product->slug }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>
+                        <form action="/dashboard/products/{{ $product->slug }}" method="post" class="d-inline">
                           @method('delete')
                           @csrf
                           <button class="badge bg-danger border-0" onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span></button>

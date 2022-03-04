@@ -1,11 +1,11 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-0 mb-3 border-3 border-bottom">
         <h1 class="h2">Edit blog</h1>
     </div>
 
-    <div class="col-lg-8">
+    <div class="col-lg-11 container mt-4">
         <form method="post" action="/dashboard/blogs/{{ $blog->slug }}"  class="mb-5" enctype="multipart/form-data">
             @method('put')
             @csrf
@@ -54,7 +54,7 @@
                 <input id="body" type="hidden" name="body" value="{{ old('body', $blog->body) }}">
                 <trix-editor input="body"></trix-editor>
             </div>
-            <button type="submit" class="btn btn-primary">Update blog</button>
+            <button type="submit" class="btn btn-primary rounded-pill w-100">Update blog</button>
         </form>       
     </div>
 

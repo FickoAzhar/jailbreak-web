@@ -112,9 +112,6 @@ class DashboardBlogController extends Controller
             }
             $validatedData['image'] = $request->file('image')->store('blog-images');
         }
-        
-        $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['excerpt'] = Str::limit(strip_tags($request->body), 200);
 
         blog::where('id', $blog->id)
             ->update($validatedData);

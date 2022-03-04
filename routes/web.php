@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardBlogController;
+use App\Http\Controllers\DashboardProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,6 @@ Route::get('/dashboard', function(){
 
 Route::get('/dashboard/blogs/checkSlug', [DashboardBlogController::class, 'checkSlug'])->middleware('admin');
 Route::resource('/dashboard/blogs',DashboardBlogController::class)->middleware('admin');
+
+Route::get('/dashboard/products/checkSlug', [DashboardProductController::class, 'checkSlug'])->middleware('admin');
+Route::resource('/dashboard/products',DashboardProductController::class)->middleware('admin');

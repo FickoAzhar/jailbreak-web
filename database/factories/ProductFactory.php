@@ -23,7 +23,14 @@ class ProductFactory extends Factory
             'deskripsi' => collect($this->faker->paragraphs(mt_rand(2,10)))
                     ->map(fn($p)=> "<p>$p</p>")
                     ->implode(''),
-            'category_id' => mt_rand(1,3)
+            'category_id' => mt_rand(1,3),
+            'year_built' => $this->faker->year(),
+            'sertificate'=> $this->faker->sentence(mt_rand(2,8)),
+            'tot_floors' => mt_rand(1,5),
+            'luas' => mt_rand(1,5),
+            'bedroom' => mt_rand(1,3),
+            'bathroom' => mt_rand(1,3),
+            'facility' => $this->faker->sentence(mt_rand(2,8)),
         ];
     }
 }

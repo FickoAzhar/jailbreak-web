@@ -98,3 +98,11 @@ body {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
+
+.footer-bottom p{
+  margin-left: 165px;
+}
+
+.dashboard1{
+  margin-bottom: 413px;
+}

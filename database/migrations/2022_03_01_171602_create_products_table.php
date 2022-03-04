@@ -21,6 +21,14 @@ class CreateProductsTable extends Migration
             $table->string('lokasi')->unique();
             $table->string('image')->nullable();
             $table->text('deskripsi');
+            $table->integer('price')->nullable();
+            $table->integer('year_built');
+            $table->string('sertificate')->nullable();
+            $table->integer('tot_floors');
+            $table->integer('luas');
+            $table->string('facility');
+            $table->integer('bedroom');
+            $table->integer('bathroom');
             $table->timestamps();
         });
     }
