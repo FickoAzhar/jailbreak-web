@@ -99,8 +99,8 @@
                                     <small class="text-muted">{{ $product->lokasi }}
                                     </small>
                                 </p>
-                                2 <i class="fa-solid fa-bed"></i> 2 <i class="fa-solid fa-hot-tub"></i> 45 m2
-                                <br>Rp 5.000.000.000</p>
+                                {{ $product->bedroom }}<i class="fa-solid fa-bed"></i>  {{   $product->bathroom }}<i class="fa-solid fa-hot-tub"></i>  {{   $product->luas }} m2
+                                <br>Rp {{ $product->price }}</p>
                                 <div class="d-flex">
                                     <div class="btn-group mx-auto w-100">
                                         <a href="/products/{{ $product->slug }}" class="btn btn-sm btn-outline-secondary rounded-pill">Lihat Detail</a>

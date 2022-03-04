@@ -1,18 +1,29 @@
 @extends('layouts.main')
 
 @section('container')
-<section class="mt-5" id="container">
+<section id="container">
     <div class="container">
-        <div class="row mb-5">
+        {{-- Address --}}
+        <div class="d-flex container">
+            <a href="/" class="me-2"><i class="fa-solid fa-house"></i></a>
+            <span class="me-2"><i class="fa-solid fa-chevron-right"></i></span>
+            <a href="/products"  class="me-2">Product</a>
+            <span class="me-2"><i class="fa-solid fa-chevron-right"></i></span>
+            <p class="me-2 text-dark">{{ $product->title }}</p>
+        </div>
+        {{-- end address --}}
+        <div class="row my-5">
             <div class="col-md-8">
                 <h3 class="text-center mb-3">{{ $product->title }}</h3>
                 <div class="d-flex justify-content-between">
                     <div class="d-flex">
-                        <p>Kategori :</p>
-                        <p class="Rumah border border-dark ms-1 px-1">{{ $product->category->name }}</p>
+                        <p class="text-dark">Kategori :</p>
+                        <p class="borderer ms-1 px-1">{{ $product->category->name }}</p>
                     </div>
+
                     <div>
-                        <i class="fa-solid fa-share-nodes p-2 m-auto border border-dark"></i>
+                        <a href="#" class="px-2 py-1 m-auto borderer me-3 "><i class="fa-brands fa-whatsapp "></i>  hubungi</a>
+                        <i class="fa-solid fa-share-nodes px-2 py-1 m-auto borderer"></i>
                     </div>
                 </div>
 
@@ -24,58 +35,57 @@
                     <img src="https://source.unsplash.com/1200x400?" alt="" class="img-fluid">
                 @endif
                 
-                <article class="deskripsi my-3 fs-6">
-                    <h4>Detail</h4>
-                    <div class="border border-dark py-3 px-4">
+                <article class="deskripsi mb-3 mt-5 fs-6">
+                    <h6>Deskripsi</h6>
+                    <div class="border border-dark py-3 px-4 text-dark">
                         {!! $product->deskripsi !!}
                     </div>
                 </article>
                 <div class="detail mt-5">
-                    <h4>Detail</h4>
+                    <h6>Detail</h6>
                     <div class="border border-dark p-2">
                         <div class="row p-3">
                             <div class="col-6">
                                 <p class="mb-1 mt-2">Kategori</p>
-                                <h6 class="mb-0">Rumah</h6>
+                                <p class="mb-0 text-dark fw-bold">{{ $product->category->name }}</p>
                                 <hr class="mt-0">
                             </div>
                             <div class="col-6">
                                 <p class="mb-1 mt-2">Luas Bangunan</p>
-                                <h6 class="mb-0">9m x 5m (45m2)</h6>
+                                <p class="mb-0 text-dark fw-bold">{{ $product->luas }}</p>
                                 <hr class="mt-0">
                             </div>
                             <div class="col-6">
-                                <p class="mb-1 mt-2">Harga Per m2</p>
-                                <h6 class="mb-0">Rp.45000000</h6>
+                                <p class="mb-1 mt-2">Harga</p>
+                                <p class="mb-0 text-dark fw-bold">{{ $product->price }}</p>
                                 <hr class="mt-0">
                             </div>
                             <div class="col-6">
                                 <p class="mb-1 mt-2">Tahun Pembuatan</p>
-                                <h6 class="mb-0">2017</h6>
+                                <p class="mb-0 text-dark fw-bold">{{ $product->year_built }}</p>
+                                <hr class="mt-0">
+                            </div>
+                            <div class="col-6">
+                                <p class="mb-1 mt-2">Sertifikat</p>
+                                <p class="mb-0 text-dark fw-bold">{{ $product->sertificate }}</p>
+                                <hr class="mt-0">
+                            </div>
+                            <div class="col-6">
+                                <p class="mb-1 mt-2">total lantai</p>
+                                <p class="mb-0 text-dark fw-bold">{{ $product->tot_floors }} lantai</p>
                                 <hr class="mt-0">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="fasilitas mt-5">
-                    <h4>Fasilitas</h4>
+                    <h6>Fasilitas</h6>
                     <div class="border border-dark p-2">
                         <div class="row p-3">
                             <div class="col-6 d-flex py-1">
-                                <i class="fa-solid fa-bed"></i>
-                                <h6 class="ms-3">2 kamar tidur</h6>
-                            </div>
-                            <div class="col-6 d-flex py-1">
-                                <i class="fa-solid fa-person-swimming"></i>
-                                <h6 class="ms-3">1 Kolam renang dewasa</h6>
-                            </div>
-                            <div class="col-6 d-flex py-1">
-                                <i class="fa-brands fa-pagelines"></i>
-                                <h6 class="ms-3">taman seluas 5m2</h6>
-                            </div>
-                            <div class="col-6 d-flex py-1">
-                                <i class="fa-solid fa-utensils"></i>
-                                <h6 class="ms-3">1 ruang makan</h6>
+                                <p class="text-dark">
+                                    {!! $product->facility !!}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -83,7 +93,7 @@
             </div>
 
             <div class="col-md-4">            
-                <form action="" class="position-sticky sticky-top buatform">
+                <form action="" class="position-sticky sticky-top form-req">
                     <div class="row border g-2 border-light justify-content-center p-2 rounded shadow ">
                         <h5 class="text-center py-3">Form request</h5>
                         <div class="col-md-12">
@@ -108,21 +118,22 @@
                     </div>
                 </form>
             </div>
+
             <!-- MAPS -->
             <section class="container" id="container">
                 <div class="maps">
-                    <h3 class="text-center mt-0 pt-0 mb-4">Lokasi</h3>
+                    <h4 class="text-center mt-0 pt-0 mb-4">Lokasi</h4>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2735402105336!2d109.24713381405701!3d-7.434954175311657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655ea49d9f9885%3A0x62be0b6159700ec9!2sTelkom%20Institute%20of%20Technology%20Purwokerto!5e0!3m2!1sen!2sid!4v1645769991631!5m2!1sen!2sid" class="w-100" height="450" style="border: 2px solid black;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </section>
             <!-- END MAPS -->
+
             <!-- PRODUCT LAIN-->
         </div>
     </div>
     <section class="p-0">
         <div class="container-fluid" id="container">
-                <h4>Produk Lainnya</h4>
-                <hr>
+                <h4 class="border-2 border-bottom">Produk Lainnya</h4>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-4">
                     @foreach ($products as $product)
                         <div class="col">
@@ -159,120 +170,6 @@
                             </div>
                         </div>
                     @endforeach
-                    {{-- <div class="col">
-                        <div class="card shadow-sm product position-relative overflow-hidden">
-                            <img src="asset/img/c1.jpg" alt="">
-                            <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                                <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-house-chimney-user"></i>  Rumah</p>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-text fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="card-text fs-6">Jl. Prapanca R No.43 Blok IV Jakarta Barat
-                                    <br>2 <i class="fa-solid fa-bed"></i> 2 <i class="fa-solid fa-hot-tub"></i> 45 m2
-                                    <br>Rp 5.000.000.000</p>
-                                <div class="d-flex">
-                                    <div class="btn-group mx-auto w-100">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill">Beli</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                      <div class="card shadow-sm product position-relative overflow-hidden">
-                            <img src="asset/img/c2.jpg" alt="">
-                            <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                                <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-house-chimney-user"></i>  Rumah</p>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-text fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="card-text fs-6">Jl. Prapanca R No.43 Blok IV Jakarta Barat
-                                    <br>2 <i class="fa-solid fa-bed"></i> 2 <i class="fa-solid fa-hot-tub"></i> 45 m2
-                                    <br>Rp 5.000.000.000</p>
-                                <div class="d-flex">
-                                    <div class="btn-group mx-auto w-100">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill">Beli</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm product position-relative overflow-hidden">
-                            <img src="asset/img/c3.jpg" alt="">
-                            <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                                <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-hotel"></i>  Apartement</p>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-text fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="card-text fs-6">Jl. Prapanca R No.43 Blok IV Jakarta Barat
-                                    <br>2 <i class="fa-solid fa-bed"></i> 2 <i class="fa-solid fa-hot-tub"></i> 45 m2
-                                    <br>Rp 5.000.000.000</p>
-                                <div class="d-flex">
-                                    <div class="btn-group mx-auto w-100">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill">Beli</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                      <div class="card shadow-sm product position-relative overflow-hidden">
-                            <img src="asset/img/c4.jpg" alt="">
-                            <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                                <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-warehouse"></i>  Villa</p>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-text fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="card-text fs-6">Jl. Prapanca R No.43 Blok IV Jakarta Barat
-                                    <br>2 <i class="fa-solid fa-bed"></i> 2 <i class="fa-solid fa-hot-tub"></i> 45 m2
-                                    <br>Rp 5.000.000.000</p>
-                                <div class="d-flex">
-                                    <div class="btn-group mx-auto w-100">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill">Beli</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card shadow-sm product position-relative overflow-hidden">
-                            <img src="asset/img/c5.jpg" alt="">
-                            <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                                <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-hotel"></i>  Apartement</p>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-text fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="card-text fs-6">Jl. Prapanca R No.43 Blok IV Jakarta Barat
-                                    <br>2 <i class="fa-solid fa-bed"></i> 2 <i class="fa-solid fa-hot-tub"></i> 45 m2
-                                    <br>Rp 5.000.000.000</p>
-                                <div class="d-flex">
-                                    <div class="btn-group mx-auto w-100">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill">Beli</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                      <div class="card shadow-sm product position-relative overflow-hidden">
-                            <img src="asset/img/c6.jpg" alt="">
-                            <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                                <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-hotel"></i>  Apartement</p>
-                            </div>
-                            <div class="card-body">
-                                <h3 class="card-text fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="card-text fs-6">Jl. Prapanca R No.43 Blok IV Jakarta Barat
-                                    <br>2 <i class="fa-solid fa-bed"></i> 2 <i class="fa-solid fa-hot-tub"></i> 45 m2
-                                    <br>Rp 5.000.000.000</p>
-                                <div class="d-flex">
-                                    <div class="btn-group mx-auto w-100">
-                                        <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill">Beli</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
 
         </div>

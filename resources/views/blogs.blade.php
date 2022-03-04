@@ -7,8 +7,13 @@
         <i class="fa-solid fa-angle-right my-auto mx-2"></i>
         Blog
     </div>  --}}
+    <div class="d-flex container">
+        <a href="/" class="me-2"><i class="fa-solid fa-house"></i></a>
+        <span class="me-2"><i class="fa-solid fa-chevron-right"></i></span>
+        <p class="text-dark">blog</p>
+    </div>
     <div class="container-fluid" id="container">
-    <h1 class="mt-5 text-center">{{ $title }}</h1>
+    <h3 class="mt-5 text-center">{{ $title }}</h3>
 
     <div class="row justify-content-center mb-3">
         <div class="col-md-6">
@@ -48,19 +53,21 @@
         <div class="row">
             @foreach ($blogs as $blog)
                 <div class="col-md-4 mb-3">
-                    <div class="card">         
-                        @if ($blog->image)
-                            <img src="{{ asset('storage/' . $blog->image) }}" alt="" class="img-fluid">
-                        @else
-                            <img src="https://source.unsplash.com/500x300?" class="card-img-top" alt="">
-                        @endif
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $blog->title }}</h5>
-                            <p class="card-time">{{ $blog->created_at }}</p>
-                            <p class="card-text">{{ $blog->excerpt }}</p>
-                            <a href="/blogs/{{ $blog->slug }}" class="btn btn-primary">Read More</a>
+                    <a href="/blogs/{{ $blog->slug }}">
+                        <div class="card blog">         
+                            @if ($blog->image)
+                                <img src="{{ asset('storage/' . $blog->image) }}" alt="" class="img-fluid">
+                            @else
+                                <img src="https://source.unsplash.com/500x300?/property" class="card-img-top" alt="">
+                            @endif
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $blog->title }}</h5>
+                                <p class="card-time text-dark">{{ $blog->created_at->format('d, M Y') }}</p>
+                                <p class="card-text text-dark">{{ $blog->excerpt }}</p>
+                                <p class="card-text mt-3">Selengkapnya  <i class="fa-solid fa-angles-right my-auto"></i></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             @endforeach
         </div>

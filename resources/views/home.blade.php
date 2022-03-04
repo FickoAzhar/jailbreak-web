@@ -89,6 +89,31 @@
     </section>
     <!-- END ADVANTAGES -->
 
+    <!-- FEATURES -->
+    <section id="container-bg" class="features">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-0 py-4 mx-auto text-center">
+                <div class="feature col">
+                    <h2>100%</h2>
+                    <p>Client Satisfaction</p>
+                </div>
+                <div class="feature col">
+                    <h2>55ha</h2>
+                    <p>Land Area</p>
+                </div>
+                <div class="feature col">
+                    <h2>60%</h2>
+                    <p>Open Space</p>
+                </div>
+                <div class="feature col">
+                    <h2>43km</h2>
+                    <p>Jogging Track</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END FEATURES -->
+
     <!-- CATALOG -->
     <section>
         <div class="container-fluid" id="container">
@@ -100,112 +125,49 @@
                         in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
                 </div>
             </div>
+   
             <div class="row g-3">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="catalog position-relative overflow-hidden">
-                        <img src="/asset/img/c1.jpg" alt="">
-                        <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                            <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-house-chimney-user"></i>  Rumah</p>
-                        </div>
-                        <div class="overlay position-absolute top-0 left-0 w-100 h-100 d-flex p-4 align-items-end">
-                            <div>
-                                <h3 class="text-white fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="text-white fs-10">Jl. Prapanca R No.43 Blok IV Jakarta Barat</p>
+                @foreach ($products as $product)
+                
+                    <div class="col-lg-4 col-sm-6">
+                         
+                        <div class="catalog position-relative overflow-hidden"> 
+                            @if ($product->image)
+                                <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->category->name }}" class="img-fluid">
+                            @else
+                                <img src="https://source.unsplash.com/500x400?{{ $product->category->name }}" class="card-img-top" alt="{{ $product->category->name }}">
+                            @endif
+                            
+
+                            <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
+                                <p class="text-white text-center px-3 py-1 my-auto">
+                                    @if ($product->category_id === 1) 
+                                        <i class="fa-solid fa-house-chimney-user"></i>  <a href="/products?category={{ $product->category->slug }}" class="text-white text-decoration-none">{{ $product->category->name }}</a>
+                                    @elseif ($product->category_id === 2) 
+                                        <i class="fa-solid fa-hotel"></i>  <a href="/products?category={{ $product->category->slug }}" class="text-white text-decoration-none">{{ $product->category->name }}</a>
+                                    @else
+                                        <i class="fa-solid fa-warehouse"></i>  <a href="/products?category={{ $product->category->slug }}" class="text-white text-decoration-none">{{ $product->category->name }}</a>
+                                    @endif
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="catalog position-relative overflow-hidden">
-                        <img src="/asset/img/c2.jpg" alt="">
-                        <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                            <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-house-chimney-user"></i>  Rumah</p>
-                        </div>
-                        <div class="overlay position-absolute top-0 left-0 w-100 h-100 d-flex p-4 align-items-end">
-                            <div>
-                                <h3 class="text-white fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="text-white fs-10">Jl. Prapanca R No.43 Blok IV Jakarta Barat</p>
+                            <a href="/products/{{ $product->slug }}">
+                            <div class="overlay position-absolute top-0 left-0 w-100 h-100 d-flex p-4 align-items-end">
+                                <div>
+                                    <h5 class="text-white">{{ $product->title }}</h5>
+                                    <p class="text-white">{{ $product->lokasi }}</p>
+                                </div>
                             </div>
+                        </a>
                         </div>
+                    
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="catalog position-relative overflow-hidden">
-                        <img src="/asset/img/c3.jpg" alt="">
-                        <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                            <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-hotel"></i>  Apartement</p>
-                        </div>
-                        <div class="overlay position-absolute top-0 left-0 w-100 h-100 d-flex p-4 align-items-end">
-                            <div>
-                                <h3 class="text-white fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="text-white fs-10">Jl. Prapanca R No.43 Blok IV Jakarta Barat</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="catalog position-relative overflow-hidden">
-                        <img src="/asset/img/c4.jpg" alt="">
-                        <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                            <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-warehouse"></i>  Villa</p>
-                        </div>
-                        <div class="overlay position-absolute top-0 left-0 w-100 h-100 d-flex p-4 align-items-end">
-                            <div>
-                                <h3 class="text-white fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="text-white fs-10">Jl. Prapanca R No.43 Blok IV Jakarta Barat</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="catalog position-relative overflow-hidden">
-                        <img src="/asset/img/c5.jpg" alt="">
-                        <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                            <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-hotel"></i>  Apartement</p>
-                        </div>
-                        <div class="overlay position-absolute top-0 left-0 w-100 h-100 d-flex p-4 align-items-end">
-                            <div>
-                                <h3 class="text-white fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="text-white fs-10">Jl. Prapanca R No.43 Blok IV Jakarta Barat</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="catalog position-relative overflow-hidden">
-                        <img src="/asset/img/c6.jpg" alt="">
-                        <div class="caption position-absolute top-0 left-0 mt-2 ms-0">
-                            <p class="text-white text-center px-3 py-1 my-auto"><i class="fa-solid fa-hotel"></i>  Apartement</p>
-                        </div>
-                        <div class="overlay position-absolute top-0 left-0 w-100 h-100 d-flex p-2 align-items-end">
-                            <div>
-                                <h3 class="text-white fs-6">Rumah Joglo Jakarta Barat</h3>
-                                <p class="text-white fs-10">Jl. Prapanca R No.43 Blok IV Jakarta Barat</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
+                @endforeach
             </div>
         </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination mt-4 justify-content-center">
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item"><a class="page-link" href="#">5</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+        <div class="d-flex justify-content-center mt-5">
+            {{ $products->links() }}
+        </div>
     </section>
     <!-- END CATALOG -->
 
@@ -220,34 +182,24 @@
                 </div>
             </div>
             <div class="row g-4">
+                @foreach ($blogs as $blog)
                 <div class="col-md-3">
                     <div class="blog-post card-effect">
-                        <img src="/asset/img/blog1.jpg" alt="">
-                        <h5 class="mt-4"><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, aliquid! Provident, aliquid!</a></h5>
-                        <p>Rabu, 23 Februari 2022</p>
+                            <a href="/blogs/{{ $blog->slug }}">    
+                                @if ($blog->image)
+                                    <img src="{{ asset('storage/' . $blog->image) }}" alt="" class="img-fluid">
+                                @else
+                                    <img src="https://source.unsplash.com/500x300?/property" class="card-img-top" alt="">
+                                @endif
+                                <h5 class="mt-4">{{ $blog->title }}</h5>
+                                <p class="text-dark">{{ $blog->created_at->format('d, M Y') }}</p>
+                            </a>                    
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="blog-post card-effect">
-                        <img src="/asset/img/blog2.jpg" alt="">
-                        <h5 class="mt-4"><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, aliquid!</a></h5>
-                        <p>Rabu, 23 Februari 2022</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="blog-post card-effect">
-                        <img src="/asset/img/blog3.jpg" alt="">
-                        <h5 class="mt-4"><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, aliquid!</a></h5>
-                        <p>Rabu, 23 Februari 2022</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="blog-post card-effect">
-                        <img src="/asset/img/blog4.jpg" alt="">
-                        <h5 class="mt-4"><a href="#">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, aliquid!</a></h5>
-                        <p>Rabu, 23 Februari 2022</p>
-                    </div>
-                </div>
+                @endforeach
+            </div>
+            <div class="d-flex justify-content-center mt-5">
+                {{ $blogs->links() }}
             </div>
 
         </div>
