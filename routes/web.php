@@ -26,6 +26,20 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/about', function () {
+    return view('about',[
+        "title" => "Tentang Kami",
+        "active" => "about"
+    ]);
+});
+
+Route::get('/contact', function () {
+    return view('contact',[
+        "title" => "Kontak Kami",
+        "active" => "contact"
+    ]);
+});
+
 Route::get('/products',[ProductController::class, 'index']);
 Route::get('/products/{product:slug}',[ProductController::class, 'show']);
 
