@@ -6,7 +6,7 @@
                 <div class="col-lg-4">
                     <!-- <img class="logo" src="" alt=""> -->
                     <h5 class="text-white">The Dream's property</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto atque, quae voluptas magni officia nihil doloribus impedit fuga quisquam excepturi?</p>
+                    <p>{{ __('general.footexcerpt') }}</p>
                     <div class="social-icons d-flex">
                         <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -17,20 +17,19 @@
                 <div class="col-lg-2">
                     <h5 class="text-white">Brand</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Product</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Find Us</a></li>
-                        <li><a href="#">About us</a></li>
+                        <li><a href="#">{{ __('general.aboutUs') }}</a></li>
+                        <li><a href="#">{{ __('general.product') }}</a></li>
+                        <li><a href="#">{{ __('general.blog') }}</a></li>
+                        <li><a href="#">{{ __('general.contactUs') }}</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2">
-                    <h5 class="text-white">More</h5>
+                    <h5 class="text-white">{{ __('general.more') }}</h5>
                     <ul class="list-unstyled">
                         <li><a href="#">FAQ's</a></li>
-                        <li><a href="#">Privacy & Policy</a></li>
-                        <li><a href="#">Warranty</a></li>
-                        <li><a href="#">Procedure</a></li>
+                        <li><a href="#">{{ __('general.privacy&policy') }}</a></li>
+                        <li><a href="#">{{ __('general.warranty') }}</a></li>
+                        <li><a href="#">{{ __('general.procedure') }}</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4 contact">
@@ -46,7 +45,7 @@
     </div>
     <div class="footer-bottom py-3">
         <div class="container">
-            <p class="mb-0 text-center">Copyright © 2022 The Dream’s Property | All Rights Reserved | Owned by PT. Cipta Anugerah Laksana</p>
+            <p class="mb-0 text-center">{{ __('general.copyright') }}</p>
         </div>
     </div>
 </footer>

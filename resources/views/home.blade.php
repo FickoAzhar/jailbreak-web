@@ -27,15 +27,14 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-color">TENTANG KAMI</h6>
-                    <h1>Profile The Dream's property</h1>
+                    <h6 class="text-color text-uppercase">{{ __('general.aboutUs') }}</h6>
+                    <h1>{{ __('general.profile') }}</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-7 my-auto py-2 text-end">
-                    <p class="text-align-justify">The Dream's Property merupakan projek kolaborasi berskala internasional antara PT Meikarta Group Pte. Ltd., dan PT. Cipta Anugerah. Tiga company besar membangun international standard golden resort living di lokasi paling strategis di Kemang, dengan konsep “Golden Living by The Mountain”. The Dream's Property adalah development properti paling eksklusif dan terbaik di Indonesia.
-                    </p>
-                    <button type="button" class="mt-2 btn btn-primary">Read More</button>
+                    <p class="text-align-justify">{{ __('general.profexcerpt') }}</p>
+                    <button type="button" class="mt-2 btn btn-primary">{{ __('general.more') }}</button>
                 </div>
                 <div class="col-lg-5">
                     <img src="/asset/img/about.jpg" alt="" class="rounded" width="100%">
@@ -95,19 +94,19 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-0 py-4 mx-auto text-center">
                 <div class="feature col">
                     <h2>100%</h2>
-                    <p>Client Satisfaction</p>
+                    <p>{{ __('general.csatisfication') }}</p>
                 </div>
                 <div class="feature col">
                     <h2>55ha</h2>
-                    <p>Land Area</p>
+                    <p>{{ __('general.larea') }}</p>
                 </div>
                 <div class="feature col">
                     <h2>60%</h2>
-                    <p>Open Space</p>
+                    <p>{{ __('general.ospace') }}</p>
                 </div>
                 <div class="feature col">
                     <h2>43km</h2>
-                    <p>Jogging Track</p>
+                    <p>{{ __('general.jtrack') }}</p>
                 </div>
             </div>
         </div>
@@ -119,8 +118,8 @@
         <div class="container-fluid" id="container">
             <div class="row mb-5">
                 <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-color">KATALOG</h6>
-                    <h1>Produk yang kami tawarkan</h1>
+                    <h6 class="text-color text-uppercase">{{ __('general.catalog') }}</h6>
+                    <h1>{{ __('general.catalog1') }}</h1>
                     <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga
                         in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
                 </div>
@@ -176,8 +175,8 @@
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-8 mx-auto text-center">
-                    <h6 class="text-color">BLOG</h6>
-                    <h1>Latest News From The Blog</h1>
+                    <h6 class="text-color text-uppercase">{{ __('general.blog') }}</h6>
+                    <h1>{{ __('general.news') }}</h1>
                     <p>Lorem ipsum dolor sit amet consectetur nisi necessitatibus repellat distinctio eveniet eaque fuga in cumque optio consectetur harum vitae debitis sapiente praesentium aperiam aut</p>
                 </div>
             </div>

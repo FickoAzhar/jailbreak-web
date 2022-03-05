@@ -8,6 +8,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardBlogController;
 use App\Http\Controllers\DashboardProductController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LocalizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,11 @@ Route::get('/products/{product:slug}',[ProductController::class, 'show']);
 
 Route::get('/blogs',[BlogController::class, 'index']);
 Route::get('/blogs/{blog:slug}',[BlogController::class, 'show']);
+
+if (file_exists(app_path('Http/Controllers/LocalizationController.php')))
+{
+    Route::get('lang/{locale}', [LocalizationController::class , 'lang']);
+}
 
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);

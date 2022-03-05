@@ -12,34 +12,34 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title === "The Dream's Property") ? 'active' : '' }}" href="/">Home</a>
+                    <a class="nav-link {{ ($title === "The Dream's Property") ? 'active' : '' }}" href="/">{{ __('general.home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title === "produk") ? 'active' : '' }}" href="/products">Product & Services</a>
+                    <a class="nav-link {{ ($title === "produk") ? 'active' : '' }}" href="/products">{{ __('general.product') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title === "blogs") ? 'active' : '' }}" href="/blogs">Blog</a>
+                    <a class="nav-link {{ ($title === "blogs") ? 'active' : '' }}" href="/blogs">{{ __('general.blog') }}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <!-- <a class="nav-link" href="#">Find Us</a> -->
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Find Us
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('general.findUs') }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item {{ ($title === "tentang kami") ? 'active' : '' }}" href="/about">About Us</a></li>
-                        <li><a class="dropdown-item {{ ($title === "contact") ? 'active' : '' }}" href="/contact">Contact Us</a></li>
+                        <li><a class="dropdown-item {{ ($title === "tentang kami") ? 'active' : '' }}" href="/about">{{ __('general.aboutUs') }}</a></li>
+                        <li><a class="dropdown-item {{ ($title === "contact") ? 'active' : '' }}" href="/contact">{{ __('general.contactUs') }}</a></li>
                     </ul>
                 </li> 
             </ul>
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fa-solid fa-globe"></i>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Indonesia</a></li>
-                      <li><a class="dropdown-item" href="#">English</a></li>
-                    </ul>
-                </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{strtoupper(Lang::locale())}}
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="lang/id">ID</a></li>
+                      <li><a class="dropdown-item" href="lang/en">EN</a></li>
+                  </ul>
+              </li>
                 @auth
                   {{-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,14 +62,14 @@
                   <li class="nav-item dropdown">
                     <form action="/logout" method="post">
                       @csrf
-                      <button type="submit" class="dropdown-item" ><i class="bi bi-box-arrow-right"></i>Logout</button>
+                      <button type="submit" class="dropdown-item" ><i class="bi bi-box-arrow-right"></i>{{ __('general.logout') }}</button>
                     </form>
                   </li>
                   @else
       
                   <li class="nav-item">
                     <a href="/login" class="nav-link {{ ($active === "login")?'active' :''}}">
-                      <i class="bi bi-box-arrow-in-right"></i>Login
+                      <i class="bi bi-box-arrow-in-right"></i>{{ __('general.login') }}
                     </a>
                   </li>
                 @endauth
