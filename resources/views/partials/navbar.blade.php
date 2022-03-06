@@ -15,13 +15,12 @@
                     <a class="nav-link {{ ($title === "The Dream's Property") ? 'active' : '' }}" href="/">{{ __('general.home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ ($title === "produk") ? 'active' : '' }}" href="/products">{{ __('general.product') }}</a>
+                    <a class="nav-link {{ Request::is('/products*') ? 'active' : '' }}" href="/products">{{ __('general.product') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ ($title === "blogs") ? 'active' : '' }}" href="/blogs">{{ __('general.blog') }}</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <!-- <a class="nav-link" href="#">Find Us</a> -->
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ __('general.findUs') }}
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -41,42 +40,23 @@
                   </ul>
               </li>
                 @auth
-                  {{-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Welcome back, {{ auth()->user()->name }}
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li>
-                        <a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i>My dashboard</a></li>
-                      <li>
-                        <hr class="dropdown-divider">
-                      </li>
-                      <li>
-                        <form action="/logout" method="post">
-                          @csrf
-                          <button type="submit" class="dropdown-item" ><i class="bi bi-box-arrow-right"></i>Logout</button>
-                        </form>
-                      </li>
-                    </ul>
-                  </li> --}}
-                  <li class="nav-item dropdown">
+                  <li class="nav-item">
                     <form action="/logout" method="post">
                       @csrf
-                      <button type="submit" class="dropdown-item" ><i class="bi bi-box-arrow-right"></i>{{ __('general.logout') }}</button>
+                      <button type="submit" class="btn ms-lg-3 py-0 rounded-pill" >{{ __('general.logout') }}</button>
                     </form>
                   </li>
                   @else
       
                   <li class="nav-item">
-                    <a href="/login" class="nav-link {{ ($active === "login")?'active' :''}}">
-                      <i class="bi bi-box-arrow-in-right"></i>{{ __('general.login') }}
+                    <a href="/login" class="nav-link">
+                      <button class="btn ms-lg-3 py-0 rounded-pill">
+                        {{ __('general.login') }}
+                      </button>
                     </a>
                   </li>
                 @endauth
               </ul>
-            {{-- <button class="btn ms-lg-3 py-0 rounded-pill">
-                Login
-            </button> --}}
         </div>
     </div>
 </nav>

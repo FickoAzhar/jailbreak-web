@@ -14,7 +14,7 @@
 
     <div class="table-responsive mt-4">
         <div class="d-flex justify-content-end me-3">
-          <a href="/dashboard/products/create" class="btn btn-primary mb-3"><span data-feather="plus"></span>  product Baru</a>
+          <a href="/dashboard/products/create" class="btn btn-primary mb-3"><span data-feather="plus"></span>  New product</a>
         </div>
         <table class="table table-striped table-sm">
           <thead>

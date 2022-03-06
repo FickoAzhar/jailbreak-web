@@ -43,16 +43,18 @@ body {
 
 .sidebar .nav-link {
   font-weight: 500;
-  color: #333;
+  color: #727272;
 }
-
+.sidebar .nav-item a:hover{
+  color: #c2c0c0;
+}
 .sidebar .nav-link .feather {
   margin-right: 4px;
   color: #727272;
 }
 
 .sidebar .nav-link.active {
-  color: #2470dc;
+  color: #f8f8f8;
 }
 
 .sidebar .nav-link:hover .feather,
@@ -105,4 +107,8 @@ body {
 
 .dashboard1{
   margin-bottom: 413px;
+}
+
+.body{
+  text-align: justify;
 }

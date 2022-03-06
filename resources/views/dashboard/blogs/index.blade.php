@@ -2,7 +2,7 @@
 
 @section('container')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-0 mb-3 border-2 border-bottom">
-        <h1 class="h2">The Dream's Property Blog</h1>
+        <h2>The Dream's Property Blog</h2>
     </div>
 
     @if(session()->has('success'))
@@ -14,7 +14,7 @@
 
     <div class="table-responsive mt-4">
       <div class="d-flex justify-content-end me-3">
-        <a href="/dashboard/blogs/create" class="btn btn-primary mb-3"><span data-feather="plus"></span>  Blog Baru</a>
+        <a href="/dashboard/blogs/create" class="btn btn-primary mb-3"><span data-feather="plus"></span>  New blog</a>
       </div>
         <table class="table table-striped table-sm">
           <thead>
@@ -30,7 +30,7 @@
                 <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $blog->title }}</td>
-                    <td>{{ $blog->created_at }}</td>
+                    <td>{{ $blog->created_at->format('d, M Y') }}</td>
                     <td>
                         <a href="/dashboard/blogs/{{ $blog->slug }}" class="badge bg-info"><span data-feather="eye"></span></a>
                         <a href="/dashboard/blogs/{{ $blog->slug }}/edit" class="badge bg-warning"><span data-feather="edit"></span></a>

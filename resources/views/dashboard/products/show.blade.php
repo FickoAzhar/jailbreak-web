@@ -11,10 +11,10 @@
                     @csrf
                     <button class="btn btn-danger border-0" onclick="return confirm('Are you sure?')"><span data-feather="x-circle"></span>Delete</button>
                 </form>
-                <h3 class="text-center p-3 mt-5">{{ $product->title }}</h3>
+                <h2 class="text-center p-3 mt-5">{{ $product->title }}</h2>
                 <div class="d-flex justify-content-between">
                     <div class="d-flex">
-                        <p>Diposting pada : {{ $product->created_at }}</p>
+                        <p>Diperbarui pada : {{ $product->updated_at->format('d, M Y') }}</p>
                     </div>
                 </div>
 
@@ -26,14 +26,14 @@
                     <img src="https://source.unsplash.com/1200x400?" alt="" class="img-fluid">
                 @endif
                 
-                <article class="deskripsi my-3 fs-6">
-                    <h4>Deskripsi</h4>
-                    <div class="border border-dark py-3 px-4">
+                <article class="deskripsi pt-3 my-3 fs-6">
+                    <h5>Deskripsi</h5>
+                    <div class="body border border-dark py-3 px-4">
                         {!! $product->deskripsi !!}
                     </div>
                 </article>
-                <div class="detail mt-5">
-                    <h4>Detail</h4>
+                <div class="detail mt-4">
+                    <h5>Detail</h5>
                     <div class="border border-dark p-2">
                         <div class="row p-3">
                             <div class="col-6">
@@ -43,7 +43,7 @@
                             </div>
                             <div class="col-6">
                                 <p class="mb-1 mt-2">Luas Bangunan</p>
-                                <h6 class="mb-0">9m x 5m (45m2)</h6>
+                                <h6 class="mb-0">{{ $product->luas }} m2</h6>
                                 <hr class="mt-0">
                             </div>
                             <div class="col-6">
@@ -64,20 +64,9 @@
                     <div class="border border-dark p-2">
                         <div class="row p-3">
                             <div class="col-6 d-flex py-1">
-                                <i class="fa-solid fa-bed"></i>
-                                <h6 class="ms-3">2 kamar tidur</h6>
-                            </div>
-                            <div class="col-6 d-flex py-1">
-                                <i class="fa-solid fa-person-swimming"></i>
-                                <h6 class="ms-3">1 Kolam renang dewasa</h6>
-                            </div>
-                            <div class="col-6 d-flex py-1">
-                                <i class="fa-brands fa-pagelines"></i>
-                                <h6 class="ms-3">taman seluas 5m2</h6>
-                            </div>
-                            <div class="col-6 d-flex py-1">
-                                <i class="fa-solid fa-utensils"></i>
-                                <h6 class="ms-3">1 ruang makan</h6>
+                                <p class="text-dark fs-6">
+                                    {!! $product->facility !!}
+                                </p>
                             </div>
                         </div>
                     </div>
