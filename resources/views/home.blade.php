@@ -225,9 +225,17 @@
                     <textarea name="" id="" cols="30" rows="5" class="form-control"
                         placeholder="Enter Message"></textarea>
                 </div>
-                <div class="col-md-10 d-grid">
-                    <button class="btn btn-primary">{{ __('home.reqview') }}</button>
-                </div>
+                @auth
+                    <div class="col-md-10 d-grid mx-auto">
+                        <button class="btn btn-primary">{{ __('home.reqview') }}</button>
+                    </div>
+                @else
+                    <fieldset disabled>
+                        <div class="col-md-10 d-grid mx-auto">
+                            <button class="btn btn-primary">{{ __('home.reqview') }}</button>
+                        </div>
+                    </fieldset>
+                @endauth
             </form>
 
         </div>
