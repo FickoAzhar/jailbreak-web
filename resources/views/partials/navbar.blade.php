@@ -41,13 +41,14 @@
               </li>
                 @auth
                   <li class="nav-item">
+                    <a href="/login" class="nav-link">
                     <form action="/logout" method="post">
                       @csrf
-                      <button type="submit" class="btn ms-lg-3 py-0 rounded-pill" >{{ __('general.logout') }}</button>
+                      <button type="submit" class="ms-lg-3 py-0 rounded-pill border-0" >{{ __('general.logout') }}</button>
                     </form>
+                  </a>
                   </li>
                   @else
-      
                   <li class="nav-item">
                     <a href="/login" class="nav-link">
                       <button class="btn ms-lg-3 py-0 rounded-pill">

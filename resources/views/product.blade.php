@@ -7,7 +7,7 @@
         <div class="d-flex container">
             <a href="/" class="me-2"><i class="fa-solid fa-house"></i></a>
             <span class="me-2"><i class="fa-solid fa-chevron-right"></i></span>
-            <a href="/products"  class="me-2">Product</a>
+            <a href="/products"  class="me-2">{{ __('general.product') }}</a>
             <span class="me-2"><i class="fa-solid fa-chevron-right"></i></span>
             <p class="me-2 text-dark">{{ $product->title }}</p>
         </div>
@@ -17,12 +17,12 @@
                 <h3 class="text-center mb-3">{{ $product->title }}</h3>
                 <div class="d-flex justify-content-between">
                     <div class="d-flex">
-                        <p class="text-dark">Kategori :</p>
+                        <p class="text-dark">{{ __('produk&blog.category') }} :</p>
                         <p class="borderer ms-1 px-1">{{ $product->category->name }}</p>
                     </div>
 
                     <div>
-                        <a href="#" class="px-2 py-1 m-auto borderer me-3 "><i class="fa-brands fa-whatsapp "></i>  hubungi</a>
+                        <a href="#" class="px-2 py-1 m-auto borderer me-3 "><i class="fa-brands fa-whatsapp "></i>  {{ __('produk&blog.contact') }}</a>
                         <i class="fa-solid fa-share-nodes px-2 py-1 m-auto borderer"></i>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                 @endif
                 
                 <article class="deskripsi mb-3 mt-5 fs-6">
-                    <h6>Deskripsi</h6>
+                    <h6>{{ __('produk&blog.description') }}</h6>
                     <div class="border border-dark py-3 px-4 text-dark">
                         {!! $product->deskripsi !!}
                     </div>
@@ -46,32 +46,32 @@
                     <div class="border border-dark p-2">
                         <div class="row p-3">
                             <div class="col-6">
-                                <p class="mb-1 mt-2">Kategori</p>
+                                <p class="mb-1 mt-2">{{ __('produk&blog.category') }}</p>
                                 <p class="mb-0 text-dark fw-bold">{{ $product->category->name }}</p>
                                 <hr class="mt-0">
                             </div>
                             <div class="col-6">
-                                <p class="mb-1 mt-2">Luas Bangunan</p>
+                                <p class="mb-1 mt-2">{{ __('produk&blog.luas') }}</p>
                                 <p class="mb-0 text-dark fw-bold">{{ $product->luas }}</p>
                                 <hr class="mt-0">
                             </div>
                             <div class="col-6">
-                                <p class="mb-1 mt-2">Harga</p>
+                                <p class="mb-1 mt-2">{{ __('produk&blog.price') }}</p>
                                 <p class="mb-0 text-dark fw-bold">{{ $product->price }}</p>
                                 <hr class="mt-0">
                             </div>
                             <div class="col-6">
-                                <p class="mb-1 mt-2">Tahun Pembuatan</p>
+                                <p class="mb-1 mt-2">{{ __('produk&blog.ybuilt') }}</p>
                                 <p class="mb-0 text-dark fw-bold">{{ $product->year_built }}</p>
                                 <hr class="mt-0">
                             </div>
                             <div class="col-6">
-                                <p class="mb-1 mt-2">Sertifikat</p>
+                                <p class="mb-1 mt-2">{{ __('produk&blog.certificate') }}</p>
                                 <p class="mb-0 text-dark fw-bold">{{ $product->sertificate }}</p>
                                 <hr class="mt-0">
                             </div>
                             <div class="col-6">
-                                <p class="mb-1 mt-2">total lantai</p>
+                                <p class="mb-1 mt-2">{{ __('produk&blog.tfloor') }}</p>
                                 <p class="mb-0 text-dark fw-bold">{{ $product->tot_floors }} lantai</p>
                                 <hr class="mt-0">
                             </div>
@@ -79,7 +79,7 @@
                     </div>
                 </div>
                 <div class="fasilitas mt-5">
-                    <h6>Fasilitas</h6>
+                    <h6>{{ __('home.facilities') }}</h6>
                     <div class="border border-dark p-2">
                         <div class="row p-3">
                             <div class="col-6 d-flex py-1">
@@ -97,24 +97,32 @@
                     <div class="row border g-2 border-light justify-content-center p-2 rounded shadow ">
                         <h5 class="text-center py-3">Form request</h5>
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Nama">
+                            <input type="text" class="form-control" placeholder="Name">
                         </div>
                         <div class="col-md-12">
                             <input type="text" class="form-control" placeholder="E-mail">
                         </div>
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="No whatsapp">
+                            <input type="text" class="form-control" placeholder="whatsapp">
                         </div>
                         <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Enter whatsapp">
+                            <input type="date" class="form-control">
                         </div>
                         <div class="col-md-12">
                             <textarea name="" id="" cols="30" rows="5" class="form-control"
-                                placeholder="Masukan Pesan"></textarea>
+                                placeholder="Message"></textarea>
                         </div>
-                        <div class="col-md-12 d-grid py-2">
-                            <button class="btn btn-primary">Request View</button>
-                        </div>
+                        @auth
+                            <div class="col-md-12 d-grid py-2">
+                                <button class="btn btn-primary">{{ __('home.reqview') }}</button>
+                            </div>
+                        @else
+                            <fieldset disabled>
+                                <div class="col-md-12 d-grid py-2">
+                                    <button class="btn btn-primary">{{ __('home.reqview') }}</button>
+                                </div>
+                            </fieldset>
+                        @endauth
                     </div>
                 </form>
             </div>
@@ -122,7 +130,7 @@
             <!-- MAPS -->
             <section class="container" id="container">
                 <div class="maps">
-                    <h4 class="text-center mt-0 pt-0 mb-4">Lokasi</h4>
+                    <h4 class="text-center mt-0 pt-0 mb-4">{{ __('home.location') }}</h4>
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.2735402105336!2d109.24713381405701!3d-7.434954175311657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655ea49d9f9885%3A0x62be0b6159700ec9!2sTelkom%20Institute%20of%20Technology%20Purwokerto!5e0!3m2!1sen!2sid!4v1645769991631!5m2!1sen!2sid" class="w-100" height="450" style="border: 2px solid black;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </section>
@@ -133,7 +141,7 @@
     </div>
     <section class="p-0">
         <div class="container-fluid" id="container">
-                <h4 class="border-2 border-bottom">Produk Lainnya</h4>
+                <h4 class="border-2 border-bottom">{{ __('produk&blog.otherproducts') }}</h4>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-4">
                     @foreach ($products as $product)
                         <div class="col">
@@ -163,7 +171,7 @@
                                     <br>Rp 5.000.000.000</p>
                                     <div class="d-flex">
                                         <div class="btn-group mx-auto w-100">
-                                            <a href="/products/{{ $product->slug }}" class="btn btn-sm btn-outline-secondary rounded-pill">Lihat Detail</a>
+                                            <a href="/products/{{ $product->slug }}" class="btn btn-sm btn-outline-secondary rounded-pill">{{ __('produk&blog.detail') }}</a>
                                         </div>
                                     </div>
                                 </div>

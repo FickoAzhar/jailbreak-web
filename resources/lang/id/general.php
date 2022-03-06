@@ -13,7 +13,7 @@ return [
     //END NAVBAR
 
     //FOOTER
-    'more' => 'More',
+    'more' => 'Lainnya',
     'footexcerpt' => "The Dream's Property merupakan projek kolaborasi berskala internasional antara PT Meikarta Group Pte. Ltd., dan PT. Cipta Anugerah.",
     'privacy&policy' => 'Kebijakan pribadi',
     'warranty' => 'Jaminan',

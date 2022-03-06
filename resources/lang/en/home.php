@@ -13,7 +13,7 @@ return [
     'location' => "location",
     'address' => "address",
     'clusters' => "clusters",
-    'facilities' => "facilities",
+    'facilities' => "facility",
     'facilities2' => "Lifestyle Heaven, Highland, passage, Clubhouse",
     'totarea' => "total area",
     'totarea2' => "55 Hectare",

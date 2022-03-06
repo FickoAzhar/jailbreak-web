@@ -7,8 +7,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="section-title text-center">
-                        <h6 class="text-color">Contact Us</h6>
-                        <h2 class="fw-bold mb-5">Hi! Let's Connect</h2>
+                        <h6 class="text-color">{{ __('findus.contactus') }}</h6>
+                        <h2 class="fw-bold mb-5">{{ __('findus.connect') }}</h2>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="text ms-3">
-                            <h3 class="fs-5">Phone</h3>
+                            <h3 class="fs-5">{{ __('findus.phone') }}</h3>
                             <p class="text-muted">(+625) 85 211 232 332</p>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="text ms-3">
-                            <h3 class="fs-5">Address</h3>
+                            <h3 class="fs-5">{{ __('findus.address') }}</h3>
                             <p class="text-muted">Jl. Prapanca R No.43 Blok IV Kemang, Jakarta Selatan</p>
                         </div>
                     </div>
@@ -47,25 +47,25 @@
                         <form action="">
                             <div class="row">
                                 <div class="col-lg-6 mb-4">
-                                    <input type="text" placeholder="Isi nama Anda" class="form-control form-control-lg fs-6 border-0 shadow-sm">
+                                    <input type="text" placeholder="{{ __('findus.name') }}" class="form-control form-control-lg fs-6 border-0 shadow-sm">
                                 </div>
                                 <div class="col-lg-6 mb-4">
-                                    <input type="text" placeholder="Isi email Anda" class="form-control form-control-lg fs-6 border-0 shadow-sm">
+                                    <input type="text" placeholder="{{ __('findus.email') }}" class="form-control form-control-lg fs-6 border-0 shadow-sm">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 mb-4">
-                                    <input type="text" placeholder="Subjek pesan" class="form-control form-control-lg fs-6 border-0 shadow-sm">
+                                    <input type="text" placeholder="{{ __('findus.subject') }}" class="form-control form-control-lg fs-6 border-0 shadow-sm">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12 mb-4">
-                                    <textarea rows="5" type="text" placeholder="Isi pesan" class="form-control form-control-lg fs-6 border-0 shadow-sm"></textarea>
+                                    <textarea rows="5" type="text" placeholder="{{ __('findus.message') }}" class="form-control form-control-lg fs-6 border-0 shadow-sm"></textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="" col-lg-12>
-                                    <button type="submit" class="btn btn-dark px-5">Send Message</button>
+                                    <button type="submit" class="btn btn-dark px-5">{{ __('findus.send') }}</button>
                                 </div>
                             </div>
                         </form>

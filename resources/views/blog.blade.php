@@ -35,7 +35,7 @@
             
             </div>
             <div class="col-md-4">
-                <h5 class="pt-5 mt-5 border-2 border-bottom">Produk Lainnya</h5>
+                <h5 class="pt-5 mt-5 border-2 border-bottom">{{ __('produk&blog.otherblog') }}</h5>
                 @foreach ($blogs as $blog)
                 <a href="/blogs/{{ $blog->slug }}">
                     <div class="blog-post card-effect bg-light my-4">
