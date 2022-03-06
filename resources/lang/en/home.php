@@ -1,0 +1,28 @@
+<?php
+
+return [
+    'reqview' => "request Viewing",
+    'playvideo' => "play video",
+    'virtualtour' => "360 virtual tour",
+    'moto' => "golden living by the mountains",
+    'profile' => "Profile The Dream's property",
+    'profexcerpt' => "The Dream's Property is an international collaboration project between PT Meikarta Group Pte. Ltd., dan PT. Cipta Anugerah. Three big companies built international standard golden resort living in the most strategic location in Kemang, with the concept of “Golden Living by The Mountain”. The Dream's Property is the most exclusive and best property development in Indonesia.",
+    'more' => 'read more',
+    'about' => "a property designed for you",
+    'aboutdesc' => "The Dream's Property is a Premium area surrounded by beautiful mountains and cool air. A development area that has been very well designed to build a residence for your family.",
+    'location' => "location",
+    'address' => "address",
+    'clusters' => "clusters",
+    'facilities' => "facilities",
+    'facilities2' => "Lifestyle Heaven, Highland, passage, Clubhouse",
+    'totarea' => "total area",
+    'totarea2' => "55 Hectare",
+    'vproject' => "visit project",
+    'csatisfication' => 'Client Satisfication',
+    'larea' => 'Land Area',
+    'ospace' => 'Open Space',
+    'jtrack' => 'Jogging Track',
+    'catalog' => 'catalog',
+    'catalog1' => 'Products we offer',
+    'news' => 'The latest news about The Dreams Property',
+]; 

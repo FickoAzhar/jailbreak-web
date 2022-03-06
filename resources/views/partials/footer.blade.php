@@ -33,7 +33,7 @@
                     </ul>
                 </div>
                 <div class="col-lg-4 contact">
-                    <h5 class="text-white">Contact</h5>
+                    <h5 class="text-white">{{ __('general.contact') }}</h5>
                     <ul class="list-unstyled">
                         <li><i class="fa-solid fa-location-dot"></i> Jl. Prapanca R No.43 Blok IV Kemang, Jakarta Selatan</li>
                         <li><i class="fa-solid fa-envelope"></i> TheDreamsProperty@example.com</li>

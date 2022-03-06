@@ -102,19 +102,7 @@ section {
     background-image: url(../asset/img/advantages.jpeg);
     background-position: center;
     background-size: cover;
-}
-
-.advantages .iconbox {
-    width: 54px;
-    height: 54px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--primary);
-    color: white;
-    font-size: 32px;
-    border-radius: 100px;
-    flex: none;
+    box-shadow: 30px 30px;
 }
 /*END ADVANTAGES*/
 
