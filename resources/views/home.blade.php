@@ -11,9 +11,9 @@
                 </div>
             </div>
             <div class="mt-5 d-flex justify-content-center">
-                <a href="#" class="btn btn-outline-light px-5 me-3 text-capitalize">{{ __('home.reqview') }}</a> <i class="fa-solid fa-angle-right fa-2x d-flex align-items-center"></i>
-                <a href="#" class="btn mx-auto btn-outline-light ms-auto px-5 text-capitalize">{{ __('home.playvideo') }}</a>
-                <i class="fa-solid fa-angle-left fa-2x d-flex align-items-center me-3 "></i> <a href="#" class="btn btn-outline-light px-5 text-capitalize">{{ __('home.virtualtour') }}</a>
+                <a href="#reqview" class="btn btn-outline-light px-5 me-3 text-capitalize">{{ __('home.reqview') }}</a> <i class="fa-solid fa-angle-right fa-2x d-flex align-items-center"></i>
+                <a href="#video" class="btn mx-auto btn-outline-light ms-auto px-5 text-capitalize">{{ __('home.playvideo') }}</a>
+                <i class="fa-solid fa-angle-left fa-2x d-flex align-items-center me-3 "></i> <a href="#product" class="btn btn-outline-light px-5 text-capitalize">{{ __('home.virtualtour') }}</a>
             </div>
             <div class="mt-5 d-flex justify-content-center">
                 <p class="fw-bold fs-6 text-white text-capitalize">{{ __('home.moto') }}</p>
@@ -34,10 +34,12 @@
             <div class="row">
                 <div class="col-lg-7 my-auto py-2 text-end">
                     <p class="text-align-justify">{{ __('home.profexcerpt') }}</p>
-                    <button type="button" class="mt-2 btn btn-primary">{{ __('home.more') }}</button>
+                    <a href="/about">
+                        <button type="button" class="mt-2 btn btn-primary">{{ __('home.more') }}</button>
+                    </a>
                 </div>
-                <div class="col-lg-5">
-                    <img src="/asset/img/about.jpg" alt="" class="rounded" width="100%">
+                <div class="col-lg-5" id="video">
+                    <iframe width="100%" height="300" src="https://www.youtube.com/embed/p1-mvDVWj7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -52,7 +54,7 @@
                 <div class="row">
                     <div class="col-md-10 offset-md-1">
                         <h1 class="text-uppercase">{{ __('home.about') }}</h1>
-                        <p>The Dream’s Property merupakan kawasan Premium yang dikelilingi oleh keindahan pegunungan serta udara yang sejuk. Kawasan pengembangan yang telah di rancang dengan sangat baik untuk membangun sebuah hunian keluarga Anda.</p>
+                        <p>{{ __('home.aboutdesc') }}</p>
 
                         <div class="d-flex justify-content-between">
                             <div class="me-5">
@@ -109,7 +111,7 @@
     <!-- END FEATURES -->
 
     <!-- CATALOG -->
-    <section>
+    <section id="product">
         <div class="container-fluid" id="container">
             <div class="row mb-5">
                 <div class="col-md-8 mx-auto text-center">
@@ -164,7 +166,7 @@
     <!-- END CATALOG -->
 
     <!-- BLOG -->
-    <section class="bg-light pt-5" id="container">
+    <section class="bg-light pt-5 pb-0" id="container">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-md-8 mx-auto text-center">
@@ -195,6 +197,43 @@
         </div>
     </section>
     <!-- END BLOG -->
+
+    {{-- FORM --}}
+    <section id="reqview">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-8 mx-auto text-center">
+                    <h6 class="text-color text-uppercase">Request</h6>
+                    <h1>Form {{ __('home.reqview') }}</h1>
+                </div>
+            </div>
+
+            <form action="" class="row g-3 justify-content-center">
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Name">
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="E-mail">
+                </div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="whatsapp">
+                </div>
+                <div class="col-md-10">
+                    <input type="date" class="form-control">
+                </div>
+                <div class="col-md-10">
+                    <textarea name="" id="" cols="30" rows="5" class="form-control"
+                        placeholder="Enter Message"></textarea>
+                </div>
+                <div class="col-md-10 d-grid">
+                    <button class="btn btn-primary">{{ __('home.reqview') }}</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+    {{-- END FORM --}}
+    
 
     <script src="/js/script.js"></script>
 @endsection
